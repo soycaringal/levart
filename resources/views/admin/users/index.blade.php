@@ -1,7 +1,8 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: soy
- * Date: 1/27/17
- * Time: 12:31 AM
- */
+@extends('layouts.admin')
+
+@section('content')
+
+                    <div class="panel-body">
+                        You are logged in!
+                    </div>
+@endsection

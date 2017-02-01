@@ -12,4 +12,14 @@ const { mix } = require('laravel-mix');
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
+    .copy('resources/assets/js/sb-admin.js', 'public/js')
+    .copy('bower_components/bootstrap/dist/js/bootstrap.min.js', 'public/js')
+    .sass('resources/assets/sass/app.scss', 'public/css')
+    .sass('resources/assets/sass/sb-admin.scss', 'public/css')
+    .sass('bower_components/font-awesome/scss/font-awesome.scss', 'public/css')
+    .extract(['jquery'])
+    // .copy('bower_components/font-awesome', 'public/assets/fonts')
+    .copy('bower_components/metisMenu', 'public/js');
+
+
+

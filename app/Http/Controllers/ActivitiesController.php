@@ -14,7 +14,9 @@ class ActivitiesController extends Controller
      */
     public function index()
     {
-        //
+        $activities = Activity::all();
+
+        return view('admin.activities.index', compact('activities'));
     }
 
     /**
@@ -24,7 +26,7 @@ class ActivitiesController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.activities.create');
     }
 
     /**
@@ -35,7 +37,11 @@ class ActivitiesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $activity = $request->all();
+
+        Activity::create($activity);
+
+        return redirect(route('activities.index'));
     }
 
     /**
@@ -57,7 +63,7 @@ class ActivitiesController extends Controller
      */
     public function edit(Activity $activity)
     {
-        //
+        return view('admin.activities.edit', compact('activity'));
     }
 
     /**
@@ -69,7 +75,9 @@ class ActivitiesController extends Controller
      */
     public function update(Request $request, Activity $activity)
     {
-        //
+        $activity->name = $request->name;
+        $activity->save();
+        return redirect(route('activities.index'));
     }
 
     /**
@@ -80,6 +88,7 @@ class ActivitiesController extends Controller
      */
     public function destroy(Activity $activity)
     {
-        //
+        $activity->delete();
+        return redirect(route('activities.index'));
     }
 }

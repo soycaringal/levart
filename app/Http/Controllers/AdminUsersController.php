@@ -14,7 +14,7 @@ class AdminUsersController extends Controller
      */
     public function index()
     {
-        return view('admin.user.index');
+        return view('admin.users.index');
     }
 
     /**
@@ -24,7 +24,7 @@ class AdminUsersController extends Controller
      */
     public function create()
     {
-        return view('admin.user.create');
+        return view('admin.users.create');
     }
 
     /**
@@ -46,7 +46,7 @@ class AdminUsersController extends Controller
      */
     public function show(User $user)
     {
-        return view('admin.user.show');
+        return view('admin.users.show');
     }
 
     /**
@@ -57,7 +57,7 @@ class AdminUsersController extends Controller
      */
     public function edit(User $user)
     {
-        return view('admin.user.edit');
+        return view('admin.users.edit');
     }
 
     /**
