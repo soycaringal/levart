@@ -264,24 +264,23 @@
                     <li>
                         <a href="/admin"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                     </li>
-                    <li>
-                        <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="flot.html">Flot Charts</a>
-                            </li>
-                            <li>
-                                <a href="morris.html">Morris.js Charts</a>
-                            </li>
-                        </ul>
-                        <!-- /.nav-second-level -->
-                    </li>
+
                     <li>
                         <a href="/admin/users"><i class="fa fa-user"></i> Users</a>
                     </li>
+
+                    <li>
+                        <a href="/admin/hotspots"><i class="fa fa-table"></i> Hotspots</a>
+                    </li>
+
+                    <li>
+                        <a href="/admin/destinations"><i class="fa fa-table"></i> Destination</a>
+                    </li>
+
                     <li>
                         <a href="/admin/activities"><i class="fa fa-table"></i> Activities</a>
                     </li>
+
                 </ul>
             </div>
             <!-- /.sidebar-collapse -->

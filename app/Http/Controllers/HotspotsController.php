@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Hotspot;
+use App\Address;
 use Illuminate\Http\Request;
 
 class HotspotsController extends Controller
@@ -14,7 +15,9 @@ class HotspotsController extends Controller
      */
     public function index()
     {
-        //
+        $hotspots = Hotspot::all();
+
+        return view('admin.hotspots.index', compact('hotspots'));
     }
 
     /**
@@ -24,7 +27,7 @@ class HotspotsController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.hotspots.create');
     }
 
     /**
@@ -35,7 +38,16 @@ class HotspotsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        $address = new Address($input);
+        $address->save();
+
+        $hotspot = new Hotspot();
+        $hotspot->name = $input['name'];
+
+        $address->hotspot()->save($hotspot);
+
+        return redirect(route('hotspots.index'));
     }
 
     /**
@@ -57,7 +69,7 @@ class HotspotsController extends Controller
      */
     public function edit(Hotspot $hotspot)
     {
-        //
+        return view('admin.hotspots.edit', compact('hotspot'));
     }
 
     /**
@@ -69,7 +81,12 @@ class HotspotsController extends Controller
      */
     public function update(Request $request, Hotspot $hotspot)
     {
-        //
+        $hotspot->name = $request->name;
+        $hotspot->rank = $request->rank;
+        $hotspot->save();
+
+        $hotspot->address()->update($request->all());
+        return redirect(route('hotspots.index'));
     }
 
     /**
@@ -80,6 +97,9 @@ class HotspotsController extends Controller
      */
     public function destroy(Hotspot $hotspot)
     {
-        //
+        $hotspot->address()->delete();
+        $hotspot->delete();
+
+        return redirect(route('hotspots.index'));
     }
 }
