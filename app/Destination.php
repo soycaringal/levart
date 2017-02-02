@@ -16,6 +16,10 @@ class Destination extends Model
         return $this->belongsTo('App\Address');
     }
 
+    public function files() {
+        return $this->hasMany('App\File');
+    }
+
     // this is a recommended way to declare event handlers
     protected static function boot() {
         parent::boot();

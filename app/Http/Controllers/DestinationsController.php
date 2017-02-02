@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Destination;
 use App\Activity;
 use App\Address;
+use App\File;
 use Illuminate\Http\Request;
 
 class DestinationsController extends Controller
@@ -52,6 +53,18 @@ class DestinationsController extends Controller
         $destination->rank = $input['rank'];
 
         $address->destination()->save($destination);
+
+        $files = $request->file('files');
+
+        if($request->hasFile('files'))
+        {
+            foreach ($files as $file) {
+                $name = $file->getClientOriginalName();
+                $file->move('images',  $name);
+
+                $destination->files()->save(new File(['filename' => $name]));
+            }
+        }
 
         return redirect(route('destinations.index'));
     }
