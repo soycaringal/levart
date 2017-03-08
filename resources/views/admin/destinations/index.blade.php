@@ -26,7 +26,7 @@
         <tr>
             <td></td>
             <td>{{ $destination->guide }}</td>
-            <td>{{ $destination->content }}</td>
+            <td class="col-sm-4">{{ $destination->content }}</td>
             <td>{{ $destination->rank }}</td>
             <td>
                 {{ $destination->address->street }},
