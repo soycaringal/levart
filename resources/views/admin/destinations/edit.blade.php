@@ -15,6 +15,27 @@
       'files' => true]) !!}
 
         <div class="form-group">
+            {!! Form::label('title', 'Budget', ['class' => 'col-sm-3 control-label']) !!}
+            <div class="col-sm-3">
+                {!! Form::text('budget', $destination->budget , ['class' => 'form-control', 'placeholder' => 'Budget']) !!}
+            </div>
+        </div>
+
+        <div class="form-group">
+            {!! Form::label('title', 'Distance', ['class' => 'col-sm-3 control-label']) !!}
+            <div class="col-sm-3">
+                {!! Form::text('distance', $destination->distance , ['class' => 'form-control', 'placeholder' => 'Distance']) !!}
+            </div>
+        </div>
+
+        <div class="form-group">
+            {!! Form::label('title', 'ETA', ['class' => 'col-sm-3 control-label']) !!}
+            <div class="col-sm-3">
+                {!! Form::text('eta', $destination->eta , ['class' => 'form-control', 'placeholder' => 'ETA']) !!}
+            </div>
+        </div>
+
+        <div class="form-group">
             {!! Form::label('title', 'Street', ['class' => 'col-sm-3 control-label']) !!}
             <div class="col-sm-3">
                 {!! Form::text('street', $destination->address->street , ['class' => 'form-control', 'placeholder' => 'Street']) !!}
@@ -71,9 +92,18 @@
         </div>
 
         <div class="form-group">
-            {!! Form::label('title', 'Image', ['class' => 'col-sm-3 control-label']) !!}
+            {!! Form::label('title', 'Images', ['class' => 'col-sm-3 control-label']) !!}
             <div class="col-sm-6">
-                {!! Form::file('files[]', null , ['class' => 'form-control', 'placeholder' => 'Content']) !!}
+
+                {!! Form::file('files[]', ['class' => 'form-control', 'placeholder' => 'Content', 'multiple' => 'true']) !!}
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-6">
+                @foreach ($destination->files as $file)
+                    <img width="100" src="/images/{{ $file->filename }}" alt=""></td>
+                @endforeach
             </div>
         </div>
 

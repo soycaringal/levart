@@ -15,19 +15,31 @@
         <thead>
         <tr>
             <th>Image</th>
+            <th>Budget</th>
+            <th>Distance</th>
+            <th>Eta</th>
             <th>Guide</th>
             <th>Content</th>
             <th>Rank</th>
+            <th>Likes</th>
             <th>Address</th>
         </tr>
         </thead>
         <tbody>
         @foreach ($destinations as $destination)
         <tr>
-            <td></td>
+            <td>
+                @if (!$destination->files->isEmpty())
+                <img width="100" src="/images/{{ $destination->files{0}->filename }}" alt=""></td>
+                @endif
+
+            <td>{{ $destination->budget }}</td>
+            <td>{{ $destination->distance }}</td>
+            <td>{{ $destination->eta }}</td>
             <td>{{ $destination->guide }}</td>
             <td class="col-sm-4">{{ $destination->content }}</td>
             <td>{{ $destination->rank }}</td>
+            <td>{{ $destination->likes }}</td>
             <td>
                 {{ $destination->address->street }},
                 {{ $destination->address->brgy }},

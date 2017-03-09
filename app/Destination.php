@@ -9,7 +9,12 @@ class Destination extends Model
     protected $fillable = [
         'guide',
         'content',
+        'budget',
+        'distance',
+        'eta',
         'rank',
+        'likes',
+        'views',
     ];
 
     public function address() {

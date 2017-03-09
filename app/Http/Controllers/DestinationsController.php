@@ -50,6 +50,9 @@ class DestinationsController extends Controller
         $destination->activity_id = $input['activity_id'];
         $destination->guide = $input['guide'];
         $destination->content = $input['content'];
+        $destination->budget = $input['budget'];
+        $destination->distance = $input['distance'];
+        $destination->eta = $input['eta'];
         $destination->rank = $input['rank'];
 
         $address->destination()->save($destination);
@@ -104,10 +107,26 @@ class DestinationsController extends Controller
         $destination->activity_id = $request->activity_id;
         $destination->guide = $request->guide;
         $destination->content = $request->content;
+        $destination->budget = $request->budget;
+        $destination->distance = $request->distance;
+        $destination->eta = $request->eta;
         $destination->rank = $request->rank;
         $destination->save();
 
         $destination->address()->update($request->all());
+
+        $files = $request->file('files');
+
+        if($request->hasFile('files'))
+        {
+            foreach ($files as $file) {
+                $name = $file->getClientOriginalName();
+                $file->move('images',  $name);
+
+                $destination->files()->save(new File(['filename' => $name]));
+            }
+        }
+
         return redirect(route('destinations.index'));
     }
 

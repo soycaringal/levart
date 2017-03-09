@@ -15,6 +15,27 @@
         'files' => true]) !!}
 
         <div class="form-group">
+            {!! Form::label('title', 'Budget', ['class' => 'col-sm-3 control-label']) !!}
+            <div class="col-sm-3">
+                {!! Form::text('budget', null , ['class' => 'form-control', 'placeholder' => 'Budget']) !!}
+            </div>
+        </div>
+
+        <div class="form-group">
+            {!! Form::label('title', 'Distance', ['class' => 'col-sm-3 control-label']) !!}
+            <div class="col-sm-3">
+                {!! Form::text('distance', null , ['class' => 'form-control', 'placeholder' => 'Distance']) !!}
+            </div>
+        </div>
+
+        <div class="form-group">
+            {!! Form::label('title', 'ETA', ['class' => 'col-sm-3 control-label']) !!}
+            <div class="col-sm-3">
+                {!! Form::text('eta', null , ['class' => 'form-control', 'placeholder' => 'ETA']) !!}
+            </div>
+        </div>
+
+        <div class="form-group">
             {!! Form::label('title', 'Street', ['class' => 'col-sm-3 control-label']) !!}
             <div class="col-sm-3">
                 {!! Form::text('street', null , ['class' => 'form-control', 'placeholder' => 'Street']) !!}
