@@ -17,6 +17,7 @@ class CreateDestinationsTable extends Migration
             $table->increments('id');
             $table->integer('address_id');
             $table->integer('activity_id');
+            $table->text('name')->nullable();
             $table->text('guide')->nullable();
             $table->text('content')->nullable();
             $table->string('image')->nullable();

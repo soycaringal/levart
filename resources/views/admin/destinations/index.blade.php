@@ -15,6 +15,7 @@
         <thead>
         <tr>
             <th>Image</th>
+            <th>Name</th>
             <th>Budget</th>
             <th>Distance</th>
             <th>Eta</th>
@@ -33,6 +34,7 @@
                 <img width="100" src="/images/{{ $destination->files{0}->filename }}" alt=""></td>
                 @endif
 
+            <td>{{ $destination->name }}</td>
             <td>{{ $destination->budget }}</td>
             <td>{{ $destination->distance }}</td>
             <td>{{ $destination->eta }}</td>

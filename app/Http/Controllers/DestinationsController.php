@@ -48,6 +48,7 @@ class DestinationsController extends Controller
 
         $destination = new Destination();
         $destination->activity_id = $input['activity_id'];
+        $destination->name = $input['name'];
         $destination->guide = $input['guide'];
         $destination->content = $input['content'];
         $destination->budget = $input['budget'];
@@ -105,6 +106,7 @@ class DestinationsController extends Controller
     public function update(Request $request, Destination $destination)
     {
         $destination->activity_id = $request->activity_id;
+        $destination->name = $request->name;
         $destination->guide = $request->guide;
         $destination->content = $request->content;
         $destination->budget = $request->budget;

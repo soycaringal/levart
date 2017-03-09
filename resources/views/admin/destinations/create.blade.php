@@ -15,6 +15,13 @@
         'files' => true]) !!}
 
         <div class="form-group">
+            {!! Form::label('title', 'Name', ['class' => 'col-sm-3 control-label']) !!}
+            <div class="col-sm-3">
+                {!! Form::text('name', null , ['class' => 'form-control', 'placeholder' => 'Name']) !!}
+            </div>
+        </div>
+
+        <div class="form-group">
             {!! Form::label('title', 'Budget', ['class' => 'col-sm-3 control-label']) !!}
             <div class="col-sm-3">
                 {!! Form::text('budget', null , ['class' => 'form-control', 'placeholder' => 'Budget']) !!}
