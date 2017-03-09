@@ -20,7 +20,12 @@ class CreateDestinationsTable extends Migration
             $table->text('guide')->nullable();
             $table->text('content')->nullable();
             $table->string('image')->nullable();
+            $table->string('budget')->nullable();
+            $table->string('distance')->nullable();
+            $table->string('eta')->nullable();
             $table->string('rank')->nullable();
+            $table->string('likes')->nullable();
+            $table->string('views')->nullable();
             $table->string('type')->nullable();
             $table->integer('flag')->default(0);
             $table->integer('active')->default(1);
