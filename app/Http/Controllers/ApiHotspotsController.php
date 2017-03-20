@@ -58,7 +58,7 @@ class ApiHotspotsController extends Controller
      */
     public function show(Hotspot $hotspot)
     {
-        //
+        return $hotspot;
     }
 
     /**

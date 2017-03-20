@@ -52,7 +52,7 @@ class ApiActivitiesController extends Controller
      */
     public function show(Activity $activity)
     {
-        //
+        return $activity;
     }
 
     /**

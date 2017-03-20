@@ -77,7 +77,7 @@ class ApiDestinationsController extends Controller
      */
     public function show(Destination $destination)
     {
-        //
+        return $destination;
     }
 
     /**
